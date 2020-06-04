@@ -14,10 +14,6 @@
         "categories": {
             "auth": {
                 "doorman8cb69577": {}
-            },
-            "function": {
-                "users": {},
-                "history": {}
             }
         }
     }
