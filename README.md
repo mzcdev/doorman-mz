@@ -25,6 +25,12 @@ amplify hosting add
 amplify publish
 ```
 
+## amplify api
+
+```
+
+```
+
 ## rewrite
 
 ```
