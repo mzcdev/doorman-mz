@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import { API } from 'aws-amplify'
+// import { API } from 'aws-amplify'
 
 import StackGrid from "react-stack-grid";
 
@@ -20,23 +20,44 @@ class App extends Component {
   }
 
   getUsers = async () => {
-    const url = "https://zio9pumsm3.execute-api.ap-northeast-2.amazonaws.com/demo/users";
+    const apiName = 'https://zio9pumsm3.execute-api.ap-northeast-2.amazonaws.com'
+    const path = `/demo/users`
 
-    const res = await API.get(url);
-    console.log('res', res);
+    fetch(`${apiName}${path}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            users: result.users,
+            history: result.history,
+          });
+        },
+        (error) => {
+          this.setState({
+            users: [],
+            history: [],
+          });
+        }
+      );
 
-    if (res && res.length > 0) {
-      this.setState({
-        users: res.users,
-        history: res.history,
-      });
-    }
-    else {
-      this.setState({
-        items: [],
-        user_id: "",
-      });
-    }
+    // const apiName = 'https://zio9pumsm3.execute-api.ap-northeast-2.amazonaws.com'
+    // const path = `/demo/users`
+
+    // const res = await API.get(apiName, path);
+    // console.log('res', res);
+
+    // if (res && res.length > 0) {
+    //   this.setState({
+    //     users: res.users,
+    //     history: res.history,
+    //   });
+    // }
+    // else {
+    //   this.setState({
+    //     items: [],
+    //     user_id: "",
+    //   });
+    // }
 
     setTimeout(this.getUsers, 5000);
   }
@@ -52,7 +73,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <div className='grid-visited'>
+        <div className='grid-user'>
           <StackGrid columnWidth="100%">
             {users}
           </StackGrid>
