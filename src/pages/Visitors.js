@@ -40,25 +40,6 @@ class App extends Component {
         }
       );
 
-    // const apiName = 'https://zio9pumsm3.execute-api.ap-northeast-2.amazonaws.com'
-    // const path = `/demo/users`
-
-    // const res = await API.get(apiName, path);
-    // console.log('res', res);
-
-    // if (res && res.length > 0) {
-    //   this.setState({
-    //     users: res.users,
-    //     history: res.history,
-    //   });
-    // }
-    // else {
-    //   this.setState({
-    //     items: [],
-    //     user_id: "",
-    //   });
-    // }
-
     setTimeout(this.getUsers, 5000);
   }
 
