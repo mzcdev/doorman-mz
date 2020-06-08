@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 class App extends Component {
   render() {
-    let href = `/users/${this.props.item.user_id}`;
-
     let diff = (Date.now() - this.props.item.latest) / 1000;
 
     if (diff < 60) {
@@ -49,7 +47,7 @@ class App extends Component {
       <Fragment>
         <li className='grid-item'>
           {thermal}
-          <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></a></div>
+          <div><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></div>
           <div className='grid-name'>{this.props.item.real_name}</div>
           <div className='grid-info'>{diff} {temp}</div>
         </li>
