@@ -49,7 +49,7 @@ class App extends Component {
           {thermal}
           <div><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></div>
           <div className='grid-name'>{this.props.item.real_name}</div>
-          <div className='grid-info'>{diff} {temp}</div>
+          <div className='grid-info'>{diff} {temp} {this.props.item.device_id}</div>
         </li>
       </Fragment>
     );
