@@ -28,13 +28,13 @@ class App extends Component {
       if (item_count > 5) {
         if (this.props.user_type === 'detected') {
           thermal_url = this.props.item.image_url.replace(/detected\/[a-z0-9-]+/gi, 'thermal');
-        } else if (this.props.user_type === 'unknown') {
+        } else {
           thermal_url = this.props.item.image_url.replace(/unknown\/[a-z0-9-]+/gi, 'thermal');
         }
       } else {
         if (this.props.user_type === 'detected') {
           thermal_url = this.props.item.image_url.replace(/detected/gi, 'thermal');
-        } else if (this.props.user_type === 'unknown') {
+        } else {
           thermal_url = this.props.item.image_url.replace(/unknown/gi, 'thermal');
         }
       }

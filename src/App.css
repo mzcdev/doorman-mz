@@ -54,6 +54,7 @@ footer {
 .grid-user .grid-thermal {
   position: absolute;
   width: 10vw;
+  z-index: 99;
 }
 
 .grid-user .grid-name {
