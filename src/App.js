@@ -7,8 +7,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <div className='grid-visited'>
-        </div>
+        <div className='grid-visited'></div>
       </Fragment>
     );
   }
